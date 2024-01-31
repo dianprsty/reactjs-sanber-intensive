@@ -1,20 +1,14 @@
 // import { useState } from "react";
-import { useState } from "react";
-import FormBelanja from "./components/FormBelanja/FormBelanja";
-import TabelHargaBuah from "./components/TabelHargaBuah/TabelHargaBuah";
-import Timer from "./components/Timer/Timer";
+// import FormBelanja from "./components/FormBelanja/FormBelanja";
+// import TabelHargaBuah from "./components/TabelHargaBuah/TabelHargaBuah";
+// import Timer from "./components/Timer/Timer";
 import "./index.css";
-
-let dataHargaBuah = [
-  { nama: "Semangka", harga: 10000, berat: 1000 },
-  { nama: "Anggur", harga: 40000, berat: 500 },
-  { nama: "Strawberry", harga: 30000, berat: 400 },
-  { nama: "Jeruk", harga: 30000, berat: 1000 },
-  { nama: "Mangga", harga: 30000, berat: 500 },
-];
+import { dataHargaBuah } from "./data/dataHargaBuah";
+import FormAndTabelHargaBuah from "./components/FormAndTabelHargaBuah/FormAndTabelHargaBuah";
 
 function App() {
-  const [visible, setVisible] = useState(true);
+  //useState for Timer
+  // const [visible, setVisible] = useState(true);
 
   return (
     <>
@@ -29,9 +23,10 @@ function App() {
           minHeight: "100dvh",
         }}
       >
-        {visible ? <Timer setVisible={setVisible} /> : null}
+        {/* {visible ? <Timer setVisible={setVisible} /> : null}
         <FormBelanja />
-        <TabelHargaBuah dataHargaBuah={dataHargaBuah} />
+        <TabelHargaBuah dataHargaBuah={dataHargaBuah} /> */}
+        <FormAndTabelHargaBuah dataHargaBuah={dataHargaBuah} />
       </div>
     </>
   );

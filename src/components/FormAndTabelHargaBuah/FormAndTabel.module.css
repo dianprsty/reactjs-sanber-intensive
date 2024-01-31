@@ -1,0 +1,84 @@
+.container {
+  min-width: 600px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 0 8px silver;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border-bottom: 1px solid black;
+  padding: 8px;
+}
+th {
+  border-bottom: 4px solid black;
+  text-align: start;
+  padding: 8px;
+}
+
+.action {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn_edit {
+  background-color: rgb(17, 230, 17);
+  color: white;
+}
+
+.btn_delete {
+  background-color: rgb(247, 72, 72);
+  color: white;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input_row > input {
+  width: 70%;
+  height: 32px;
+  outline: none;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.input_row > label {
+  font-weight: bold;
+}
+
+.form_button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn_submit {
+  background-color: blueviolet;
+  color: white;
+}
