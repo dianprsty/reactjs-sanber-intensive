@@ -1,6 +1,8 @@
 // import { useState } from "react";
-// import FormBelanja from "./components/FormBelanja/FormBelanja";
+import { useState } from "react";
+import FormBelanja from "./components/FormBelanja/FormBelanja";
 import TabelHargaBuah from "./components/TabelHargaBuah/TabelHargaBuah";
+import Timer from "./components/Timer/Timer";
 import "./index.css";
 
 let dataHargaBuah = [
@@ -12,12 +14,25 @@ let dataHargaBuah = [
 ];
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   return (
     <>
-      {/* <FormBelanja /> */}
-      <TabelHargaBuah dataHargaBuah={dataHargaBuah} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 24,
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          minHeight: "100dvh",
+        }}
+      >
+        {visible ? <Timer setVisible={setVisible} /> : null}
+        <FormBelanja />
+        <TabelHargaBuah dataHargaBuah={dataHargaBuah} />
+      </div>
     </>
   );
 }
