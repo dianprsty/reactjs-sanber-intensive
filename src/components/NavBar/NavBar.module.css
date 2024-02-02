@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 4px silver;
+}
+
+.header nav ul {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.header nav ul li {
+  padding: 24px 16px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.dark {
+  color: blueviolet;
+  text-decoration: none;
+}
+
+.light {
+  color: white;
+  text-decoration: none;
+}
