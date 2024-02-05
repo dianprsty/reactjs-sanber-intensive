@@ -3,6 +3,7 @@ import styles from "./FormAndTabel.module.css";
 import { BuahContext } from "../../App";
 import axios from "axios";
 import Proptypes from "prop-types";
+import { Button, Table } from "antd";
 
 const TabelBuah = ({ props: { setIdEdit, buah, setBuah } }) => {
   const { setIsLoading, dataBuah, getDataBuah } = useContext(BuahContext);
@@ -14,6 +15,51 @@ const TabelBuah = ({ props: { setIdEdit, buah, setBuah } }) => {
       weight: item.weight,
     });
   };
+
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      render: (text) => text,
+    },
+    {
+      title: "Harga",
+      dataIndex: "price",
+      align: "right",
+      render: (text) => `Rp ${text}`,
+    },
+    {
+      title: "Weight",
+      dataIndex: "weight",
+      align: "center",
+      render: (text) => `${text / 1000} Kg`,
+    },
+    {
+      title: "Action",
+      align: "center",
+      dataIndex: "id",
+      render: (id) => (
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            type="primary"
+            onClick={() => handleEdit(dataBuah.find((e) => e.id == id))}
+          >
+            Edit
+          </Button>
+          <Button type="primary" danger onClick={() => handleDelete(id)}>
+            Delete
+          </Button>
+        </div>
+      ),
+    },
+  ];
 
   const handleDelete = async (id) => {
     try {
@@ -32,6 +78,12 @@ const TabelBuah = ({ props: { setIdEdit, buah, setBuah } }) => {
   return (
     <>
       <div className={styles.container}>
+        <Table
+          columns={columns}
+          dataSource={dataBuah}
+          style={{ border: "none", width: "100%" }}
+          pagination={{ pageSize: 5 }}
+        />
         <h1>Daftar Harga Buah</h1>
         <table>
           <thead>
@@ -53,20 +105,7 @@ const TabelBuah = ({ props: { setIdEdit, buah, setBuah } }) => {
                       <td>{item.name}</td>
                       <td>Rp {item.price}</td>
                       <td>{item.weight / 1000} Kg</td>
-                      <td className={styles.action}>
-                        <button
-                          className={styles.btn_edit}
-                          onClick={() => handleEdit(item)}
-                        >
-                          Edit
-                        </button>
-                        <button
-                          className={styles.btn_delete}
-                          onClick={() => handleDelete(item.id)}
-                        >
-                          Delete
-                        </button>
-                      </td>
+                      <td className={styles.action}></td>
                     </tr>
                   );
                 })

@@ -11,20 +11,20 @@
   border-collapse: collapse;
 }
 
-td,
+/* td,
 th {
   padding: 4px;
   border: 1px solid black;
-}
+} */
 
-thead {
+/* thead {
   background: blueviolet;
   color: white;
-}
+} */
 
-tbody > :nth-child(even) {
+/* tbody > :nth-child(even) {
   background: gainsboro;
-}
+} */
 
 .align_right {
   text-align: right;
